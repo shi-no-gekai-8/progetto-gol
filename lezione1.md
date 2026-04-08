@@ -2,7 +2,7 @@
 marp: true
 theme: default
 paginate: true
-header: "![w:100px](./img/logo_azienda.png)"
+header: "![w:100px](./img/virvello%20logo%20on%20white.png)"
 style: |
   header {
     top: 20px;
@@ -26,7 +26,7 @@ style: |
 
 ## Apple vs Android
 
-![bg right:50% w:400px](./img/ios_vs_android_market.png)
+![bg right:50% w:500px](./img/ios_vs_android_market.png)
 
 Prima di scrivere una riga di codice, dobbiamo capire **dove** stiamo sviluppando.
 
@@ -50,11 +50,11 @@ Se un'azienda vi desse **100.000€** per sviluppare la prossima app virale, su 
 
 ---
 
-# L'ecosistema Android (Il Passato)
+# L'ecosistema Android
 
 ## Java + XML
 
-![bg left:40% w:300px](./img/vecchia_app_android.png) Fino a pochi anni fa, sviluppare per Android significava:
+![bg right:40% w:300px](./img/vecchia_app_android.png) Fino a pochi anni fa, sviluppare per Android significava:
 
 - Scrivere la logica in **Java** (verboso e pesante).
 - Disegnare l'interfaccia in file **XML** statici.
@@ -151,7 +151,7 @@ Chi vince il quiz sceglie il tema dell'app del prossimo laboratorio!
 
 <div align="center">
 
-![w:300px](./img/qrcode_kahoot.png) **PIN:** 123 456 7
+![w:300px](./img/qrcode_kahoot.png) **PIN:** 696660
 
 </div>
 
