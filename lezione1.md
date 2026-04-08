@@ -34,7 +34,7 @@ style: |
 
 ## Apple vs Android
 
-![bg right:50% w:400px](./img/ios_vs_android_market.png)
+![bg right:50% w:500px](./img/ios_vs_android_market.png)
 
 Prima di scrivere una riga di codice, dobbiamo capire **dove** stiamo sviluppando.
 
@@ -87,9 +87,11 @@ Oltre a iOS vs Android, c'è un'altra grande guerra in corso:
 
 # L'ecosistema Android (Il Passato)
 
+# L'ecosistema Android
+
 ## Java + XML
 
-![bg left:40% w:300px](./img/vecchia_app_android.png) Fino a pochi anni fa, sviluppare per Android significava:
+![bg right:40% w:300px](./img/vecchia_app_android.png) Fino a pochi anni fa, sviluppare per Android significava:
 
 - Scrivere la logica in **Java** (verboso e pesante).
 - Disegnare l'interfaccia in file **XML** statici.
@@ -313,6 +315,7 @@ Inquadra il QR Code con il tuo smartphone. Chi vince il quiz sceglie il tema del
 <div align="center">
 
 **PIN:** 123 456 7
+![w:300px](./img/qrcode_kahoot.png) **PIN:** 696660
 
 </div>
 
