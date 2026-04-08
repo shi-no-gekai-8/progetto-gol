@@ -87,8 +87,6 @@ Oltre a iOS vs Android, c'è un'altra grande guerra in corso:
 
 # L'ecosistema Android (Il Passato)
 
-# L'ecosistema Android
-
 ## Java + XML
 
 ![bg right:40% w:300px](./img/vecchia_app_android.png) Fino a pochi anni fa, sviluppare per Android significava:
