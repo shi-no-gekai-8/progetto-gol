@@ -18,24 +18,7 @@ style: |
   }
 ---
 
-<div align="center">
-
-![w:180px](./img/campania.png)
-
-<br>
-
-# Progetto GOL
-
-## Competenze Digitali
-
-### Corso di App Mobile
-
-<br>
-
-**dott. Alfonso Zappia**
-_9 Aprile 2026_
-
-</div>
+![bg cover](./img/prima_pagina.png)
 
 ---
 
@@ -211,3 +194,7 @@ Niente installazioni pesanti sui PC della scuola o a casa. Lavoreremo in **Cloud
 _(Passaggio a Firebase Studio per mostrare l'emulatore live nel browser)_
 
 </div>
+
+---
+
+![bg cover](./img/ultima_pagina.png)
