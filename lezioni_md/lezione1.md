@@ -1,8 +1,9 @@
 ---
 marp: true
+math: katex
 theme: default
 paginate: true
-header: "![w:100px](./img/virvelle.png)"
+header: "![w:100px](../img/virvelle.png)"
 style: |
   header {
     top: 20px;
@@ -26,7 +27,7 @@ style: |
   }
 ---
 
-![bg cover](./img/prima_pagina.png)
+![bg cover](../img/prima_pagina.png)
 
 ---
 
@@ -353,4 +354,4 @@ Condivido lo schermo e vi faccio vedere una piccolissima Demo su Android Studio
 
 ---
 
-![bg cover](./img/ultima_pagina.png)
+![bg cover](../img/ultima_pagina.png)

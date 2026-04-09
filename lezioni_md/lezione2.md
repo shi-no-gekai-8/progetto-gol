@@ -2,7 +2,7 @@
 marp: true
 theme: default
 paginate: true
-header: "![w:100px](./img/virvelle.png)"
+header: "![w:100px](../img/virvelle.png)"
 style: |
   header {
     top: 20px;
@@ -26,7 +26,7 @@ style: |
   }
 ---
 
-![bg cover](./img/prima_pagina.png)
+![bg cover](../img/prima_pagina.png)
 
 ---
 
@@ -562,4 +562,4 @@ _(Condivido lo schermo: assembliamo i pezzi visti nelle slide e lanciamo la To-D
 
 ---
 
-![bg cover](./img/ultima_pagina.png)
+![bg cover](../img/ultima_pagina.png)
