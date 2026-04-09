@@ -540,8 +540,6 @@ Button(
 
 Per cancellare un task, possiamo aggiungere un Modifier `.clickable` alla nostra singola riga.
 
-Kotlin
-
 ```
 Text(
     text = taskCorrente,
