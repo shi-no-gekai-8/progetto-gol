@@ -406,3 +406,7 @@ Ci serviranno:
 # Breve Demo 💻
 
 _(Condivido lo schermo, apriamo Android Studio e vediamo il ciclo di vita distruggere la nostra app in diretta!)_
+
+---
+
+![bg cover](../img/ultima_pagina.png)
