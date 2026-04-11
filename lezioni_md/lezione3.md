@@ -367,7 +367,7 @@ Vediamo se avete capito chi uccide le app e perché!
 
 <div align="center">
 
-**PIN:** 696660
+**PIN:** 07188553
 
 </div>
 
