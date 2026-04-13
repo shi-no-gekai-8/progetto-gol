@@ -434,8 +434,72 @@ Vediamo chi è stato attento sul Main Thread e sull'Asincronia!
 
 ---
 
-Breve Demo 💻
-(Condivido lo schermo: Andiamo ad interrogare un'API Pubblica (Meteo o Film) e vediamo JSON e Retrofit in azione!)
+# Breve Demo 💻
+
+<br>
+
+_(Condivido lo schermo: Andiamo ad interrogare un'API Pubblica (Meteo) e vediamo JSON e Retrofit in azione!)_
+
+---
+
+# Il Progetto: L'App Meteo ☁️
+
+## Cosa costruiremo oggi
+
+Ci collegheremo a **Open-Meteo**, un'API pubblica e gratuita, per scaricare le previsioni in tempo reale.
+
+**I 4 pilastri del progetto:**
+
+1. Tradurre il testo JSON in `data class` Kotlin.
+2. Creare il "traduttore di rete" con **Retrofit**.
+3. Usare `LaunchedEffect` per scaricare i dati senza bloccare lo schermo.
+4. Gestire i 3 stati dell'app: _Loading (Rotellina)_, _Success (Dati)_, _Error (Offline)_.
+
+---
+
+# Fase 1: Scaffolding
+
+## (Lo facciamo insieme)
+
+---
+
+# L'Infrastruttura di Rete
+
+Aprite Android Studio. Io condividerò lo schermo e scriveremo insieme le fondamenta:
+
+- **Il Permesso:** Aggiungiamo il passaporto `INTERNET` nel Manifest.
+- **Le Data Class:** Modelliamo la struttura del JSON.
+- **L'Interfaccia API:** Dichiariamo l'endpoint `@GET`.
+- **La UI Base:** Creiamo una schermata che mostra la temperatura attuale e un pulsante "Aggiorna".
+
+---
+
+# Fase 2: Sfida Autonoma
+
+## (Tocca a voi)
+
+---
+
+# Il vostro turno: Estendere l'App
+
+La mia demo vi fornirà dei testi grezzi. Il vostro obiettivo è trasformarla in un'app "Premium". Scegliete una (o più) di queste sfide:
+
+- 🎨 **Task UI (Estetica):** L'API restituisce un `weather_code` (es. 0=Sole, 61=Pioggia). Mostrate un'**emoji** o un'**icona** gigante in base a questo codice!
+- 🌍 **Task Logica (Cambio Città):** Il codice base è bloccato su una città fissa. Aggiungete un pulsante per **cambiare città** (modificando latitudine e longitudine e rifacendo la chiamata API).
+- 🚨 **Task Crash-Test (Sicurezza):** Spegnete il Wi-Fi del PC. L'app gestisce l'errore bene? Modificate la UI per mostrare un messaggio amichevole e un bottone **"Riprova"**.
+
+---
+
+# Promemoria sull'IA 🤖
+
+Usate ChatGPT o Gemini come **Copiloti**, non come scorciatoie.
+
+❌ _"Scrivimi un'app meteo intera in Jetpack Compose"_ (Non imparerete nulla).
+✅ _"Come faccio a passare dei parametri dinamici (latitudine e longitudine) a un LaunchedEffect quando premo un bottone?"_ (Questo è fare Ingegneria del Software).
+
+<br>
+
+**Buon lavoro e attenti ai NullPointerException!**
 
 ---
 
