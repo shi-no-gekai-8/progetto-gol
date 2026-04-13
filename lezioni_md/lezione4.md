@@ -428,7 +428,7 @@ Vediamo chi è stato attento sul Main Thread e sull'Asincronia!
 
 <div align="center">
 
-**PIN:** 696660
+**PIN:** 08130175
 
 </div>
 
@@ -454,6 +454,12 @@ Ci collegheremo a **Open-Meteo**, un'API pubblica e gratuita, per scaricare le p
 2. Creare il "traduttore di rete" con **Retrofit**.
 3. Usare `LaunchedEffect` per scaricare i dati senza bloccare lo schermo.
 4. Gestire i 3 stati dell'app: _Loading (Rotellina)_, _Success (Dati)_, _Error (Offline)_.
+
+---
+
+# Link da copiare
+
+https://pastebin.com/VTW2ygJp
 
 ---
 
