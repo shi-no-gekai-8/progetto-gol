@@ -477,7 +477,7 @@ Vediamo chi ha capito la differenza tra DataStore, SQLite e le "Room" di Trafalg
 
 <div align="center">
 
-**PIN:** 696660
+**PIN:** 0687019
 
 </div>
 
@@ -485,7 +485,84 @@ Vediamo chi ha capito la differenza tra DataStore, SQLite e le "Room" di Trafalg
 
 # Breve Demo 💻
 
-_(Condivido lo schermo: Creiamo il nostro database Room, aggiungiamo una nota, chiudiamo l'app dall'emulatore... e verifichiamo che i dati siano sopravvissuti all'apocalisse!)_
+<br>
+
+_(Condivido lo schermo: Analizziamo il codice del Diario Locale e vediamo Room in azione!)_
+
+---
+
+# Fase 1: Scaffolding
+
+## (Vediamo insieme la demo di oggi)
+
+---
+
+# L'Architettura del Progetto
+
+## I mattoni del Database (Room)
+
+Il codice che vi ho passato è diviso in file separati, proprio come lavorano i professionisti.
+
+1. **`Nota` (L'Entity):** È lo "stampo" dei nostri dati. Guardate `@PrimaryKey(autoGenerate = true)`: non dobbiamo inventarci noi gli ID, Room conta da solo (1, 2, 3...).
+2. **`AppDatabase`:** È la "cassaforte". Usa un pattern chiamato _Singleton_ (`INSTANCE`). Serve a garantire che ci sia una sola connessione al database aperta alla volta, altrimenti il telefono va in crash.
+3. **`NotaDao`:** _(Sottinteso nel codice)_ È il telecomando con i tasti `insert`, `delete` e `getAllNotes`.
+
+---
+
+# Il Ponte: Il ViewModel
+
+Perché c'è un file `MainViewModel`?
+Ricordate la regola d'oro: **Non bloccare il Main Thread!**
+
+Il ViewModel fa il lavoro sporco:
+
+- Prende il testo dalla UI.
+- Apre una **Coroutine** asincrona (`viewModelScope.launch`).
+- Salva nel database in background.
+- Restituisce i dati alla UI sotto forma di **Flow** (`val note: Flow<List<Nota>>`). Se il DB cambia, la UI si aggiorna da sola per magia.
+
+---
+
+# Sfida Autonoma
+
+## (Tocca a voi estendere il Diario)
+
+---
+
+# Il vostro turno: Estendere l'App
+
+Scegliete il vostro obiettivo o provate a completarli tutti e tre:
+
+| TASK                  | TIPO       | DESCRIZIONE                                                                                                     |
+| :-------------------- | :--------- | :-------------------------------------------------------------------------------------------------------------- |
+| **1. Motion UX**      | 🎨 Grafica | Aggiungi `Modifier.animateItem()` alla LazyColumn per rendere fluido l'inserimento e l'eliminazione delle note. |
+| **2. Data Evolution** | ⚙️ Logica  | Aggiungi il campo `isUrgente` (Boolean) nell'Entity. Se vero, mostra un'icona 🔴 nella Card della nota.         |
+| **3. Crash Test**     | 💥 Debug   | Rimuovi il `viewModelScope.launch` dal salvataggio e osserva il crash nel Logcat (Main Thread violation).       |
+
+---
+
+# ⚠️ Attenzione: Schema Change!
+
+Se modificate l'**Entity** (Task 2), l'app andrà in crash all'avvio perché il database esistente non corrisponde più al nuovo codice.
+
+**Soluzione rapida:**
+
+1. Disinstalla l'app dall'emulatore/telefono (Long press sull'icona -> Uninstall).
+2. Riesegui il progetto da Android Studio.
+3. Il database verrà ricreato da zero con i nuovi campi.
+
+---
+
+# Promemoria sull'IA 🤖
+
+Usate ChatGPT o Gemini come **Copiloti**, non come scorciatoie.
+
+❌ _"Scrivimi un'app meteo intera in Jetpack Compose"_ (Non imparerete nulla).
+✅ _"Come faccio a passare dei parametri dinamici (latitudine e longitudine) a un LaunchedEffect quando premo un bottone?"_ (Questo è fare Ingegneria del Software).
+
+<br>
+
+**Buon lavoro!**
 
 ---
 

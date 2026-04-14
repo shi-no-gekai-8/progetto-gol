@@ -457,7 +457,7 @@ Ci collegheremo a **Open-Meteo**, un'API pubblica e gratuita, per scaricare le p
 
 ---
 
-# Link da copiare
+# Aprite il progetto
 
 https://pastebin.com/VTW2ygJp
 
