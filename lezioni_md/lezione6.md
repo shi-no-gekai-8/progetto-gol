@@ -1,5 +1,6 @@
 ---
 marp: true
+math: katex
 theme: default
 paginate: true
 header: "![w:100px](../img/virvelle.png)"
@@ -370,40 +371,71 @@ L'ultimo quiz in presenza! Vediamo chi si ricorda come funzionano il GPS, i Perm
 
 <div align="center">
 
-**PIN:** 696660
+**PIN:** 06602474
 
 </div>
 
 ---
 
-# Parte 5: Verso la Pratica
-
-## L'Antifurto e i Laboratori
-
----
-
-# Il Progetto di Oggi: L'Antifurto
-
-Uniremo tutto ciò che abbiamo visto oggi in una mini-app **Antifurto**.
-
-1.  **Sensore:** Leggeremo l'accelerometro. Se l'app rileva un movimento improvviso...
-2.  **Servizio:** Faremo partire un suono di allarme a volume massimo che non si spegne chiudendo l'app (Foreground Service).
-3.  **Notifica:** Mostreremo una notifica con il tasto "Disattiva Allarme".
-
----
-
-# Roadmap Laboratori a Distanza
-
-Dalla prossima lezione non ci vedremo in aula, ma a distanza. Saranno **7 Laboratori Pratici**. La formula sarà:
-
-1.  Sviluppo Guidato (Faccio io, voi copiate e capite l'architettura).
-2.  Sfida Autonoma (Aggiungete una feature aiutati da me e dall'IA).
-
----
-
 # Breve Demo 💻
 
-_(Condivido lo schermo: Mettiamo l'emulatore sul tavolo virtuale, lanciamo l'Antifurto e muoviamo il telefono... attenti alle orecchie!)_
+## L'App Antifurto in azione
+
+_(Condivido lo schermo: attiviamo il servizio e simuliamo un furto tramite i sensori dell'emulatore!)_
+
+---
+
+# L'Architettura dell'Antifurto
+
+## Sensori + Servizi + Notifiche
+
+Per far funzionare questo progetto abbiamo unito tre poteri:
+
+1. **Il Sensore (`SensorManager`):** L'Accelerometro invia dati costanti sulla posizione nello spazio (Assi $X, Y, Z$). Abbiamo calcolato la differenza di movimento ("Delta") tra due letture.
+2. **Il Servizio (`Foreground Service`):** Il "cuore" che batte anche se chiudiamo l'app. È lui che ascolta il sensore e decide quando far suonare la sirena tramite il `MediaPlayer`.
+3. **La Notifica (`NotificationManager`):** Il ponte di comando. Permette all'utente di sapere che l'antifurto è attivo e fornisce il tasto rapido "DISATTIVA" per fermare il rumore.
+
+---
+
+# Sfida Autonoma
+
+## (Tocca a voi rendere l'Antifurto intelligente)
+
+---
+
+# Il vostro turno: Estendere l'App
+
+Scegliete la vostra missione o provate a completarle tutte e tre:
+
+| TASK                      | TIPO         | DESCRIZIONE                                                                                                                                          |
+| :------------------------ | :----------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1. Feedback Visivo**    | 🎨 Grafica   | Cambia il colore dello sfondo della schermata in ROSSO quando l'allarme è in riproduzione (`alarmPlaying = true`).                                   |
+| **2. Sensibilità Smart**  | ⚙️ Logica    | Aggiungi uno `Slider` nella UI per permettere all'utente di regolare la soglia di sensibilità (`MOVEMENT_THRESHOLD`).                                |
+| **3. Il Sensore di Luce** | 🚀 IoT Style | Sostituisci o aggiungi il sensore di luce (`TYPE_LIGHT`). Se il valore scende a 0 (telefono messo in tasca o in un cassetto buio), arma l'antifurto! |
+
+---
+
+# ⚠️ Attenzione: Sensori nell'Emulatore
+
+Ricordate che state testando sensori hardware su un computer.
+Se il codice vi sembra giusto ma non succede nulla:
+
+1. Controllate di aver aperto la finestra **Virtual Sensors -> Device Pose** nell'emulatore.
+2. **Scuotete i controlli con forza!** Se girate il telefono lentamente, la variazione di accelerazione (il _Delta_) non supererà la soglia e l'allarme non partirà.
+3. Se l'allarme non suona, controllate di aver inserito un file audio `alarm.mp3` nella cartella `res/raw`.
+
+---
+
+# Promemoria sull'IA 🤖
+
+L'IA è bravissima a spiegarvi la fisica e la matematica dietro i sensori (vettori $X, Y, Z$).
+
+❌ **No:** _"Fammi un'app antifurto."_ (Non c'è niente da imparare così).
+✅ **Sì:** _"In Android, come leggo i valori restituiti dal SensorEvent quando uso TYPE_LIGHT? Che unità di misura usa?"_
+
+<br>
+
+**Buon lavoro e non fate esplodere i timpani dei compagni!**
 
 ---
 
