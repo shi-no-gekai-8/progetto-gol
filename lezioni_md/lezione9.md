@@ -49,9 +49,9 @@ Oggi impariamo a **Navigare**.
 
 Per muoverci tra le schermate in Jetpack Compose, useremo:
 
-1. **Il NavController:** Il "pilota" che guida l'utente da una schermata all'altra.
-2. **Il NavHost:** La "mappa" che contiene tutte le rotte possibili della nostra app.
-3. **Il Salvataggio (rememberSaveable):** Il nostro giubbotto di salvataggio per non perdere i dati se l'utente ruota lo schermo durante il viaggio.
+1. **Il NavController:** _💡 Pensatelo come il volante della vostra app o il navigatore satellitare. Gli date un comando (`navController.navigate("risultati")`) e lui si occupa di farvi viaggiare verso la destinazione._
+2. **Il NavHost:** _💡 È il contenitore, la mappa. Mentre la barra del titolo in alto può restare fissa, il NavHost "scambia" dinamicamente le schermate al suo interno basandosi sulle rotte che gli abbiamo definito._
+3. **Il Salvataggio (`rememberSaveable`):** _💡 È il vostro checkpoint. Su Android, ruotare lo schermo equivale a distruggere e ricreare l'app. Con `Saveable`, i vostri dati sopravvivono all'apocalisse della rotazione._
 
 ---
 
@@ -106,7 +106,7 @@ _Preparate le tastiere, vi aspetto pronti con un progetto vuoto!_
 # Il vostro turno
 
 Adesso che sappiamo viaggiare tra le schermate, il quiz è nelle vostre mani.
-Come sempre, avete **due Task** da completare. Il primo per rendere l'esperienza piacevole alla vista, il secondo per renderla solida come la roccia.
+Come sempre, avete **tre Task** da completare per finire il laboratorio: Grafica, Logica e un Crash Test fondamentale per gestire le anomalie di sistema.
 
 ---
 
@@ -129,6 +129,19 @@ Qui si vede chi ha studiato la teoria del Modulo 3.
 **Obiettivo 2 (Il Traguardo):**
 Quando l'utente risponde alla quinta e ultima domanda, l'app non deve crashare (Out of Bounds exception!).
 Dovete usare il `NavController` per **navigare verso la terza schermata ("risultati")**, passandogli il punteggio finale.
+
+---
+
+# 💥 Task 3: Crash Test (Il Tasto "Indietro")
+
+C'è un bug gravissimo nella vostra navigazione. Scopriamolo.
+
+**Obiettivo:** Gestire la "Backstack" (Cronologia).
+
+- Finite il quiz e arrivate alla schermata dei **Risultati**.
+- Ora premete il tasto fisico "Indietro" di Android (la freccetta in basso).
+- **Disastro:** Tornerete alla Domanda 5! L'utente potrebbe risponderle all'infinito e sballare il punteggio.
+- **La Soluzione:** Quando navigate verso la schermata "risultati", dovete dire al NavController di _cancellare la cronologia precedente_. Cercate come usare `popUpTo("home")` per risolvere il problema!
 
 ---
 
