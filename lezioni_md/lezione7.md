@@ -45,11 +45,11 @@ Le prossime 4 ore saranno dedicate a scrivere codice, sbagliare, cercare su Goog
 
 # Recap Rapido: I 3 Mattoncini di Oggi
 
-Per l'app di oggi vi serviranno solo questi 3 concetti chiave visti a lezione:
+Per l'app di oggi vi serviranno questi 3 concetti chiave visti a lezione:
 
-1. **Il Layout Base:** `Column` (per impilare le cose dall'alto verso il basso).
-2. **L'Input:** `OutlinedTextField` (per far scrivere l'utente) e `keyboardOptions` (per far apparire il tastierino numerico anziché le lettere).
-3. **La Memoria:** `var stato by remember { mutableStateOf("") }` (per ricordare cosa scrive l'utente e aggiornare lo schermo in tempo reale).
+1. **Il Layout Base (`Column` & `Row`):** _💡 Ricordate: Jetpack Compose funziona come i Lego. Usiamo `Column` per impilare gli elementi dall'alto verso il basso, e `Row` per affiancarli._
+2. **L'Input dell'Utente (`OutlinedTextField`):** _💡 Dobbiamo guidare l'utente. Se ci aspettiamo un prezzo, dobbiamo usare `keyboardOptions` per far apparire direttamente il tastierino numerico, bloccando le lettere._
+3. **La Memoria (`remember { mutableStateOf("") }`):** _💡 Il cuore di Compose. Se non usiamo lo "Stato", il testo sullo schermo non si aggiornerà mai mentre l'utente digita sulla tastiera. Lo Stato è la vita dell'app._
 
 ---
 
@@ -111,7 +111,7 @@ _Preparate le tastiere, vi aspetto pronti con un progetto vuoto!_
 La base funziona, ma è brutta da vedere e fa il minimo indispensabile.
 È il momento di trasformarla in un'app "Premium".
 
-Avete **due Task** da completare per finire il laboratorio di oggi. Il primo è puramente visivo (UI), il secondo richiede logica.
+Avete **tre Task** da completare per finire il laboratorio di oggi: Grafica, Logica e un Crash Test fondamentale per la stabilità dell'app.
 
 ---
 
@@ -137,6 +137,18 @@ Negli Stati Uniti (e sempre più spesso anche qui), non si divide solo il conto,
 
 ---
 
+# 💥 Task 3: Crash Test (Gestione Errori)
+
+Un utente sbadato può distruggere la vostra app in due secondi.
+
+**Obiettivo:** Evitare che l'app restituisca risultati assurdi o crashi.
+
+- Cosa succede se l'utente inserisce **0** nel "Numero Persone"? (Nella matematica reale è impossibile dividere per zero, in Kotlin otterrete `Infinity` o `NaN`).
+- Cosa succede se lascia i campi **vuoti**?
+- **La Soluzione:** Usate un blocco logico (`if/else`) per controllare i dati. Se i dati non sono validi o le persone sono 0, mostrate un `Text` con un **messaggio di errore rosso** (es. _"Inserisci un numero valido di persone!"_) nascondendo il risultato.
+
+---
+
 # 🤖 Un avviso sull'Intelligenza Artificiale
 
 ## Siete Ingegneri, non Copiatori.
@@ -157,7 +169,7 @@ _(Se fate così, non imparerete nulla)._
 # Il ruolo del Copilota
 
 L'IA è il vostro **Assistente Junior**.
-L'architettura (dove va la Column, come si passano i dati) la decidete **Voi**.
+L'architettura (dove va la Column, come si passano i dati, come gestire la divisione per zero) la decidete **Voi**.
 L'IA vi aiuta solo a ricordare la sintassi che non avete a memoria.
 
 Se vi dà un blocco di codice che contiene comandi che non abbiamo mai spiegato a lezione... **NON COPIATELO**. Chiedetegli di spiegarvelo prima.

@@ -47,9 +47,9 @@ Oggi niente schermi statici: costruiremo un'app in grado di mostrare centinaia d
 
 Per l'app di oggi vi serviranno questi 3 concetti chiave visti a lezione:
 
-1. **La Data Class:** Lo "stampo" per i nostri dati (es. `val nome: String`, `val tipo: String`).
-2. **Il Componente Visivo Custom:** Una funzione `@Composable` che disegna una singola riga (una Card con immagine e testo).
-3. **La Lista Pigra:** `LazyColumn` e il magico blocco `items(lista)`, che prende i nostri dati e li trasforma in grafica scorrevole.
+1. **La Data Class (`data class`):** _💡 È il nostro "stampo". Non contiene logica o grafica, serve solo a raggruppare informazioni (es. Nome, Tipo, Immagine) in un unico pacchetto facile da trasportare nel codice._
+2. **Il Componente Visivo Custom (`@Composable`):** _💡 Scriviamo il codice per disegnare UNA singola riga (es. Immagine a sinistra e testo a destra). Il vantaggio? Lo scriviamo una volta sola e Compose lo riutilizza automaticamente per tutti i Pokemon!_
+3. **La Lista Pigra (`LazyColumn`):** _💡 Il vero motore dell'app. A differenza di una normale `Column`, la `LazyColumn` "ricicla" la memoria: distrugge la grafica dei Pokemon che scorrono fuori dallo schermo in alto e crea solo quelli che stanno per entrare in basso. È così che salviamo la RAM!_
 
 ---
 
@@ -109,7 +109,7 @@ _Preparate le tastiere, vi aspetto pronti con un progetto vuoto!_
 La base funziona: la lista scorre. Ma sembra un foglio Excel, non un Pokedex!
 È il momento di trasformarla in un'app "Premium".
 
-Avete **due Task** da completare per finire il laboratorio di oggi. Il primo è puramente visivo (UI), il secondo vi farà sbattere la testa sulla logica.
+Avete **tre Task** da completare per finire il laboratorio di oggi: Grafica, Logica e un Crash Test essenziale per non far sembrare l'app "rotta" all'utente.
 
 ---
 
@@ -131,7 +131,19 @@ Un Pokedex senza ricerca è inutile. Dobbiamo poter cercare il nostro Pokemon!
 
 - Inserite un `OutlinedTextField` sopra la `LazyColumn`.
 - Salvate il testo digitato in una **variabile di Stato**.
-- Modificate la lista passata alla `LazyColumn`: non mostrategli tutta la lista, ma solo una **lista filtrata** che contiene il testo digitato dall'utente.
+- Modificate la lista passata alla `LazyColumn`: non mostrategli tutta la lista madre, ma solo una **lista filtrata** che contiene il testo digitato dall'utente.
+
+---
+
+# 💥 Task 3: Crash Test (L'Empty State)
+
+Avete implementato la ricerca. Fantastico! Ma un utente dispettoso cerca "Batman". Cosa succede?
+
+**Obiettivo:** Gestire la lista vuota.
+
+- Attualmente, se la lista filtrata non ha risultati, la `LazyColumn` scompare e lo schermo diventa bianco e vuoto. L'utente penserà a un blocco dell'app!
+- **La Soluzione:** Usate un blocco `if/else`. Controllate se la lista filtrata è vuota (`listaFiltrata.isEmpty()`).
+- Se è vuota: mostrate un `Text` gigante centrato nello schermo con scritto _"Nessun Pokemon trovato!"_ (o un'icona triste). Se ci sono risultati: mostrate la normale `LazyColumn`.
 
 ---
 
